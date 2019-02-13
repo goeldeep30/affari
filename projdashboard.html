@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my_css.css">
     <script src="js/my_java_script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 
     <title></title>
   </head>
   <body>
     <div id="mySidenav" class="sidenav" style="width: 0px;">
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="createTask.html">Create Task</a>
+  <a href="add_new_member.html">Add Member</a>
+  <a href="assign_task.html">Assign Task</a>
+
 </div>
 <div id="main" style="margin-left: 0px;">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -27,11 +26,19 @@
 
         <div id="todo" align="center" class="jumbotron col-sm">
           <h5 >To Do</h5>
-          <div id="todo_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)">
+          <div id="todo_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
+            <div class="" data-toggle="collapse" data-target="#demo" >
+
+
             <div class="card-header">Header</div>
             <div class="card-body">
               <h5 class="card-title">Secondaryaa card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            </div>
+            <div id="demo" class="collapse" >
+              <button type="button" class="btn btn-info">Change Status</button>
+              <button type="button" class="btn btn-info">Details</button>
             </div>
           </div>
           <div id="todo_drag" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
@@ -39,7 +46,7 @@
 
         <div id="inprogress" align="center" class="jumbotron col-sm" >
           <h5 >In Progress</h5>
-          <div id="inprogress_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)">
+          <div id="inprogress_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
             <div class="card-body">
               <h5 class="card-title">Secondary card title</h5>
@@ -51,7 +58,7 @@
 
         <div id="done" align="center" class="jumbotron col-sm" >
           <h5>Done</h5>
-          <div id="done_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)">
+          <div id="done_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
             <div class="card-body">
               <h5 class="card-title">Secondary card title</h5>
