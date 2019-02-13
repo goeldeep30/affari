@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/my_css.css">
-    <script src="js/my_java_script.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/my_css.css">
+  <script src="js\jquery.min.js"></script>
+  <script src="js\my_java_script.js"></script>
+  <script src="js\bootstrap.js"></script>
+  <title></title>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+    <div ><!--Side Navigator-->
+      <div id="mySidenav" class="sidenav" style="width: 0px;">
+    <a href="#" data-toggle="modal" data-target="#create_task_modal">&bull; Create Task</a>
+    <a href="#" data-toggle="modal" data-target="#add_member_modal">&oplus; Add Member</a>
+    <a href="assign_task.html">&rarr; Assign Task</a>
 
-    <title></title>
-  </head>
-  <body>
-    <div id="mySidenav" class="sidenav" style="width: 0px;">
-  <a href="createTask.html">Create Task</a>
-  <a href="add_new_member.html">Add Member</a>
-  <a href="assign_task.html">Assign Task</a>
+  </div>
+  <div id="" style="margin-left: 0px;">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+    </div>
 
-</div>
-<div id="main" style="margin-left: 0px;">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-</div>
     <div onclick="closeNav()">
       <div class="row">
 
         <div id="todo" align="center" class="jumbotron col-sm">
           <h5 >To Do</h5>
-          <div id="todo_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
+          <div id="todo_card" class="card text-black bg-light mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="" data-toggle="collapse" data-target="#demo" >
 
 
@@ -46,7 +49,7 @@
 
         <div id="inprogress" align="center" class="jumbotron col-sm" >
           <h5 >In Progress</h5>
-          <div id="inprogress_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
+          <div id="inprogress_card" class="card text-black bg-light mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
             <div class="card-body">
               <h5 class="card-title">Secondary card title</h5>
@@ -58,7 +61,7 @@
 
         <div id="done" align="center" class="jumbotron col-sm" >
           <h5>Done</h5>
-          <div id="done_card" class="card text-white bg-secondary mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
+          <div id="done_card" class="card text-black bg-light  mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
             <div class="card-body">
               <h5 class="card-title">Secondary card title</h5>
@@ -70,5 +73,7 @@
 
       </div>
     </div>
+    <div id="create_task"></div>
+    <div id="add_member"></div>
   </body>
 </html>

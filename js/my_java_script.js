@@ -22,3 +22,28 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+
+$(function(){
+  $("#nav-placeholder").load("navbar.html");
+});
+
+$(function(){
+  $("#create_task").load("create_task.html");
+});
+
+$(function(){
+  $("#add_member").load("add_new_member.html");
+});
+
+$(function(){
+  $("#new_project").load("new_project.html");
+});
+
+$(function(){
+  $("#members").load("members.html");
+});
+// $(document).ready(function(){
+//    $("#lk_add_new_member").click(function(){
+//      $("#add_member").load("add_new_member.html");
+//    });
+//  });
