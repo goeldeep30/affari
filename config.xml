@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.tutorialspoint.onlineviewer" version = "1.0">
+   <access origin="*" />
+   <name>PLM_3d</name>
+
+   <description>
+      Demo of PLM process
+   </description>
+   <access origin="*"/>
+   <platform name="android"/>
+
+   <author href = "http://tutorialspoint.com" email = "priya.gupta@soprasteria.com">
+      Priya Gupta
+   </author>
+   <content src="login.html"/>
+
+   <preference name = "permissions" value = "none"/>
+
+   <plugin name="cordova-plugin-whitelist" source ="npm"/>
+</widget>
