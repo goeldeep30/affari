@@ -14,7 +14,6 @@
    <author href = "http://tutorialspoint.com" email = "priya.gupta@soprasteria.com">
       Priya Gupta
    </author>
-   <content src="login.html"/>
 
    <preference name = "permissions" value = "none"/>
 
