@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <widget xmlns = "http://www.w3.org/ns/widgets"
-   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.tutorialspoint.onlineviewer" version = "1.0">
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.tutorialspoint.onlineviewer" version = "1.1.0">
    <access origin="*" />
-   <name>PLM_3d</name>
+   <name>Affari</name>
 
    <description>
-      Demo of PLM process
+      Affari provides option to get self employed.
    </description>
    <access origin="*"/>
-   <platform name="android"/>
-
-   <author href = "http://tutorialspoint.com" email = "priya.gupta@soprasteria.com">
-      Priya Gupta
+   <platform name="android"><icon src="ico/handshake.png" width="180" height="180" /></platform>
+   <splash src="ico/handshake.png" platform="android" qualifier="ldpi" />
+   <author href = "http://tutorialspoint.com" email = "deeptanshu.goel@soprasteria.com">
+      Deeptanshu
    </author>
 
    <preference name = "permissions" value = "none"/>
