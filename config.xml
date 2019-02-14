@@ -9,8 +9,11 @@
       Affari provides option to get self employed.
    </description>
    <access origin="*"/>
-   <platform name="android"><icon src="ico/handshake.png" width="180" height="180" /></platform>
-   <splash src="ico/handshake.png" platform="android" qualifier="ldpi" />
+   <platform name="android">
+     <icon src="ico/handshake.png" width="180" height="180" />
+     <splash src="ico/handshake.png" width="320" height="480" />
+  </platform>
+   
    <author href = "http://tutorialspoint.com" email = "deeptanshu.goel@soprasteria.com">
       Deeptanshu
    </author>
