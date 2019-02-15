@@ -23,6 +23,8 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
+
+
 $(function(){
   $("#nav-placeholder").load("navbar.html");
 });
@@ -36,7 +38,7 @@ $(function(){
 });
 
 $(function(){
-  $("#new_project").load("get_projects.html");
+  $("#new_project").load("new_project.html");
 });
 
 $(function(){
@@ -44,9 +46,14 @@ $(function(){
 });
 
 $(function(){
-  $("#projects").load("get_projects.html");
+  $("#projects").load("model/get_projects.php");
 });
-
+// $(function(){
+//   $('#btn_create_project').click(funtion(){
+//       $("#div_create_proj").load("model/create_project.php");
+//    });
+//
+// });
 // $(document).ready(function(){
 //    $("#lk_add_new_member").click(function(){
 //      $("#add_member").load("add_new_member.html");
