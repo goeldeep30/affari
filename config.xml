@@ -13,7 +13,7 @@
      <icon src="ico/handshake.png" width="180" height="180" />
      <splash src="ico/handshake.png" width="320" height="480" />
   </platform>
-   
+
    <author href = "http://tutorialspoint.com" email = "deeptanshu.goel@soprasteria.com">
       Deeptanshu
    </author>

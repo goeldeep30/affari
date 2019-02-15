@@ -36,12 +36,17 @@ $(function(){
 });
 
 $(function(){
-  $("#new_project").load("new_project.html");
+  $("#new_project").load("get_projects.html");
 });
 
 $(function(){
   $("#members").load("members.html");
 });
+
+$(function(){
+  $("#projects").load("get_projects.html");
+});
+
 // $(document).ready(function(){
 //    $("#lk_add_new_member").click(function(){
 //      $("#add_member").load("add_new_member.html");

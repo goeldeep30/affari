@@ -19,15 +19,13 @@
     <a href="assign_task.html">&rarr; Assign Task</a>
 
   </div>
-  <div id="" style="margin-left: 0px;">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-  </div>
+
     </div>
 
-    <div onclick="closeNav()">
+    <div>
       <div class="row">
 
-        <div id="todo" align="center" class="jumbotron col-sm">
+        <div id="todo" align="center" class="jumbotron col-sm"  onclick="closeNav()">
           <h5 >To Do</h5>
           <div id="todo_card" class="card text-black bg-light mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="" data-toggle="collapse" data-target="#demo" >
@@ -47,7 +45,7 @@
           <div id="todo_drag" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
         </div>
 
-        <div id="inprogress" align="center" class="jumbotron col-sm" >
+        <div id="inprogress" align="center" class="jumbotron col-sm" onclick="closeNav()">
           <h5 >In Progress</h5>
           <div id="inprogress_card" class="card text-black bg-light mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
@@ -59,7 +57,7 @@
           <div id="inprog_drag" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
         </div>
 
-        <div id="done" align="center" class="jumbotron col-sm" >
+        <div id="done" align="center" class="jumbotron col-sm"  onclick="closeNav()">
           <h5>Done</h5>
           <div id="done_card" class="card text-black bg-light  mb-3" style="max-width: 18rem;" draggable="true" ondragstart="drag(event)" ondrop="return false;">
             <div class="card-header">Header</div>
