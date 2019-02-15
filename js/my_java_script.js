@@ -23,7 +23,13 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
+function create_project() {
+  $("#div_create_proj").load("model/create_project.php");
+}
 
+function create_task() {
+  $("#div_create_task").load("model/create_task.php");
+}
 
 $(function(){
   $("#nav-placeholder").load("navbar.html");
@@ -48,14 +54,13 @@ $(function(){
 $(function(){
   $("#projects").load("model/get_projects.php");
 });
-// $(function(){
-//   $('#btn_create_project').click(funtion(){
-//       $("#div_create_proj").load("model/create_project.php");
-//    });
-//
+
+$(function(){
+  $("#div_assign_task").load("model/assign_tasks.php");
+});
+
+// $('#frm_create_project').submit(function() {
+//   var post_data = $('#frm_create_project').serialize();
+//   $.post('model/create_project.php', post_data, function(data) {
+//   });
 // });
-// $(document).ready(function(){
-//    $("#lk_add_new_member").click(function(){
-//      $("#add_member").load("add_new_member.html");
-//    });
-//  });
