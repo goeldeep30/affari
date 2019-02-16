@@ -1,7 +1,8 @@
 <?php
   include 'db_conn.php';
   // sql to create user
-  $sql = "insert into tasks values(5,1,'demo task title','demo task desc','demo status',9919119905);";
+  $sql = sprintf("insert into tasks (pid,t_title,t_desc,t_status,t_assigned_to) values(%s,'%s','%s','%s',9919119905);",$_POST['pid'],$_POST['title'],$_POST['desc'],$_POST['status']);
+  echo $sql;
   if ($conn->query($sql) === TRUE) {
       echo "task created successfully";
   } else {

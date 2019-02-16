@@ -23,13 +23,55 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
+function auto_reload(){
+  setInterval(function(){ $("#projects").load("http://localhost/affari/model/get_projects.php"); }, 3000);
+}
+
+function create_user() {
+  alert(hii);
+  // $.post("http://localhost/affari/model/create_user.php",
+  // {
+  //   uid: 74126,
+  //   pwd: "password"
+  // },
+  // function(data, status){
+  //   alert("Data: " + data + "\nStatus: " + status);
+  // });
+  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+}
+
 function create_project() {
-  $("#div_create_proj").load("model/create_project.php");
+  // $("#div_create_proj").load("http://localhost/affari/model/create_project.php");
+
+  $.post("http://localhost/affari/model/create_project.php",
+  {
+    title: $('#txt_proj_name').val(),
+    desc: $('#txt_proj_desc').val()
+  },
+  function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+  $("#projects").load("http://localhost/affari/model/get_projects.php");
 }
 
 function create_task() {
-  $("#div_create_task").load("model/create_task.php");
+  $.post("http://localhost/affari/model/create_task.php",
+  {
+    pid: "1",
+    title: $('#txt_task_title').val(),
+    desc: $('#txt_task_desc').val(),
+    status: "to do"
+  },
+  function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
 }
+
+$(function(){
+  $("#slct_proj_members").load("http://localhost/affari/model/get_proj_members.php");
+});
 
 $(function(){
   $("#nav-placeholder").load("navbar.html");
@@ -52,15 +94,15 @@ $(function(){
 });
 
 $(function(){
-  $("#projects").load("model/get_projects.php");
+  $("#projects").load("http://localhost/affari/model/get_projects.php");
 });
 
 $(function(){
-  $("#div_assign_task").load("model/assign_tasks.php");
+  $("#div_assign_task").load("http://localhost/affari/model/assign_tasks.php");
 });
+
 
 // $('#frm_create_project').submit(function() {
 //   var post_data = $('#frm_create_project').serialize();
-//   $.post('model/create_project.php', post_data, function(data) {
-//   });
+//   $.post('model/create_project.php', post_data);
 // });

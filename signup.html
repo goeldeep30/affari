@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Deeptanshu contributors">
+  <meta name="generator" content="Deeptanshu">
 
-    <title></title>
-  </head>
-  <form action='#'>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/my_css.css">
+
+  <script src="js\jquery.min.js"></script>
+  <script src="js\my_java_script.js"></script>
+  <script src="js\bootstrap.js"></script>
+
+
+  <title></title>
+</head>
+  <form>
     <div class="container jumbotron col-lg-4" >
       <h4>Signup</h4>
     <div class="form-group">
-      <!-- <input type="email" class="form-control" id="exampleInputMobile" aria-describedby="MobileHelp" placeholder="Enter email"> -->
+      <div class="form-row form-group">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+
       <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">+91</span>
   </div>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input id="txt_mobile_num" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Type Password">
+      <input id="txt_pwd" type="password" class="form-control" placeholder="Type Password">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-type Password">
+      <input id="txt_re_pwd" type="password" class="form-control" placeholder="Re-type Password">
     </div>
     <div >
       captcha required
     </div>
-    <button type="submit" class="btn btn-primary">Signup</button>
+    <a class="btn btn-primary" onclick="create_user()">Signup</a>
   </div>
   </form>
 </html>

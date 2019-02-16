@@ -14,7 +14,7 @@
       <div class=\"card-body\">
         <h5 class=\"card-title\">%s</h5>
         <p class=\"card-text\"></p>
-        <a href=\"projdashboard.html\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#members_modal\">Assign Task</a>
+        <a onclick=\"get_proj_members()\" href=\"#\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#members_modal\">Assign Task</a>
       </div>
     </div>
     </div>
