@@ -1,7 +1,8 @@
 <?php
+  session_start();
   include 'db_conn.php';
   // sql to create user
-  $sql = "select * from projects;";
+  $sql = sprintf("select * from projects where p_owner=%s;",$_SESSION["user"]);
   if ($result=mysqli_query($conn,$sql)){
     // Fetch one and one
     while ($row=mysqli_fetch_row($result)){
@@ -10,13 +11,12 @@
           <div class=\"card-body\">
           <h5 class='card-title'>%s</h5>
           <p class='card-text'>%s</p>
-          <a href=\"projdashboard.html\" class=\"btn btn-primary\">Go somewhere</a>
+          <a onclick=\"select_proj('%s')\" class=\"btn btn-primary\">Go somewhere</a>
           </div>
         </div>
-        ",$row[1],$row[2]);
+        ",$row[1],$row[2],$row[0]);
 
       }
     }
     $conn->close();
     ?>
-     

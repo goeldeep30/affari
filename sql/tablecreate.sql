@@ -22,11 +22,11 @@ create schema affari;
     t_title varchar(15) not null,
     t_desc varchar(100),
     t_status varchar(15) not null,
+    t_created_by bigint not null,
     t_assigned_to bigint
   );
 
   create table project_members(
-    pid not null,
-    tid,
+    pid int not null,
     p_member bigint not null
   );

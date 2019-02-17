@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="nav-placeholder"></div>
-    <form action='my_projects.html'>
+    <form>
 
       <div class="container jumbotron col-lg-4" >
         <h4>Login</h4>
@@ -21,17 +21,18 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">+91</span>
     </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input id="txt_uid" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
   </div>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input id="txt_pwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
       <div class="form-group form-check">
+        <label id="signin_status"></label><br>
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Remember me</label>
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="#" onclick="authenticate_user()" class="btn btn-primary">Login</a>
     </div>
     </form>
   </body>
