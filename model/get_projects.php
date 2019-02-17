@@ -11,7 +11,7 @@
           <div class=\"card-body\">
           <h5 class='card-title'>%s</h5>
           <p class='card-text'>%s</p>
-          <a onclick=\"select_proj('%s')\" class=\"btn btn-primary\">Go somewhere</a>
+          <a href=\"#\" onclick=\"select_proj('%s')\" class=\"btn btn-primary\">Go somewhere</a>
           </div>
         </div>
         ",$row[1],$row[2],$row[0]);

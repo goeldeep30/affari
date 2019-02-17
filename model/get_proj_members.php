@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include 'db_conn.php';
   // sql to create user
   $sql = sprintf("select p_member from project_members where pid=%s;",$_SESSION["proj_id"]);

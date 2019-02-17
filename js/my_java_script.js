@@ -38,7 +38,7 @@ function create_user() {
     pwd: $('#txt_pwd').val()
   },
   function(data, status){
-    alert("User creation: " + status);
+    alert("User creation: " + data);
     window.location.href = "signin.html";
   });
 }else{
@@ -100,8 +100,9 @@ function select_proj(proj_id) {
     project_id: proj_id
   },
   function(data, status){
-      //window.location.href = "index.html";
+
     alert("Data: " + data + "\nStatus: " + status);
+    window.location.href = "projdashboard.html";
   });
   // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
 }
@@ -113,10 +114,8 @@ function add_proj_member() {
     member_id: $('#txt_new_prj_mbr_m_num').val()
   },
   function(data, status){
-    window.location.href = "projdashboard.html";
+      //window.location.href = "index.html";
     alert("Data: " + data + "\nStatus: " + status);
-
-
   });
   // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
 }
