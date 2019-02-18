@@ -168,6 +168,23 @@ function select_task(t_id) {
   // $("#div_create_task").load("model/create_task.php");
 }
 
+function change_task_status(tid,status) {
+  //alert('working: '+status);
+  $.post("model/change_task_status.php",
+  {
+    task_id: tid,
+    task_status: status
+  },
+  function(data, status){
+    $("#div_todo").load("model/get_todo_tasks.php");
+    $("#div_in_progress").load("model/get_inprogress_tasks.php");
+    $("#div_done").load("model/get_done_tasks.php");
+    //alert("Data: " + data + "\nStatus: " + status);
+    //window.location.href = "projdashboard.html";
+  });
+  // $("#div_create_task").load("model/create_task.php");
+}
+
 function get_proj_members(){
   $("#slct_proj_members").load("model/get_proj_members.php");
 }
@@ -200,6 +217,17 @@ $(function(){
   $("#div_assign_task").load("model/get_assigned_tasks.php");
 });
 
+$(function(){
+  $("#div_todo").load("model/get_todo_tasks.php");
+});
+
+$(function(){
+  $("#div_in_progress").load("model/get_inprogress_tasks.php");
+});
+
+$(function(){
+  $("#div_done").load("model/get_done_tasks.php");
+});
 
 // $('#frm_create_project').submit(function() {
 //   var post_data = $('#frm_create_project').serialize();

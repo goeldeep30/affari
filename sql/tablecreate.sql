@@ -11,16 +11,16 @@ create schema affari;
 
   create table projects(
     pid int primary key AUTO_INCREMENT,
-    p_title varchar(15) not null,
-    p_desc varchar(100),
+    p_title varchar(100) not null,
+    p_desc varchar(1000),
     p_owner bigint not null
   );
 
   create table tasks(
     tid int primary key AUTO_INCREMENT,
     pid int not null,
-    t_title varchar(15) not null,
-    t_desc varchar(100),
+    t_title varchar(100) not null,
+    t_desc varchar(1000),
     t_status varchar(15) not null,
     t_assigned_to bigint not null
   );
