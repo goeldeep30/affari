@@ -22,15 +22,15 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
-
+//http://localhost/affari/
 function auto_reload(){
-  setInterval(function(){ $("#projects").load("http://localhost/affari/model/get_projects.php"); }, 3000);
+  setInterval(function(){ $("#projects").load("model/get_projects.php"); }, 3000);
 }
 
 function create_user() {
   //alert("name "+$('#txt_mobile_num').val()+"  pwd:"+$('#txt_pwd').val());
   if($('#txt_pwd').val()==$('#txt_re_pwd').val()){
-  $.post("http://localhost/affari/model/create_user.php",
+  $.post("model/create_user.php",
   {
     f_name: $('#txt_f_name').val(),
     l_name: $('#txt_l_name').val(),
@@ -38,46 +38,56 @@ function create_user() {
     pwd: $('#txt_pwd').val()
   },
   function(data, status){
-    alert("User creation: " + data);
+    //alert("User creation: " + data);
     window.location.href = "signin.html";
   });
 }else{
   alert("Password do not match: Enter again");
 }
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function create_project() {
-  // $("#div_create_proj").load("http://localhost/affari/model/create_project.php");
+  // $("#div_create_proj").load("model/create_project.php");
 
-  $.post("http://localhost/affari/model/create_project.php",
+  $.post("model/create_project.php",
   {
     title: $('#txt_proj_name').val(),
     desc: $('#txt_proj_desc').val()
   },
   function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
   });
 
-  $("#projects").load("http://localhost/affari/model/get_projects.php");
+  $("#projects").load("model/get_projects.php");
 }
 
 function create_task() {
-  $.post("http://localhost/affari/model/create_task.php",
+  $.post("model/create_task.php",
   {
     title: $('#txt_task_title').val(),
     desc: $('#txt_task_desc').val(),
     status: "to do"
   },
   function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
+}
+
+function any_curr_user() {
+  $.post("model/get_curr_user.php",
+  {
+  },
+  function(data, status){
+    //alert("Data: " + data + "\nStatus: " + status);
+  });
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function authenticate_user() {
   //alert('working');
-  $.post("http://localhost/affari/model/authenticate_user.php",
+  $.post("model/authenticate_user.php",
   {
     uid: $('#txt_uid').val(),
     pwd: $('#txt_pwd').val()
@@ -90,50 +100,62 @@ function authenticate_user() {
     }
     //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function select_proj(proj_id) {
   //alert('working');
-  $.post("http://localhost/affari/model/select_project.php",
+  $.post("model/select_project.php",
   {
     project_id: proj_id
   },
   function(data, status){
 
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
     window.location.href = "projdashboard.html";
   });
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function add_proj_member() {
   //alert('working');
-  $.post("http://localhost/affari/model/add_project_member.php",
+  $.post("model/add_project_member.php",
   {
     member_id: $('#txt_new_prj_mbr_m_num').val()
   },
   function(data, status){
       //window.location.href = "index.html";
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function signout_user() {
   //alert('working');
-  $.post("http://localhost/affari/model/signout_user.php",
+  $.post("model/signout_user.php",
   {
   },
   function(data, status){
       window.location.href = "index.html";
     //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("http://localhost/affari/model/create_task.php");
+  // $("#div_create_task").load("model/create_task.php");
+}
+
+function assign_task() {
+  alert('working');
+  // $.post("model/signout_user.php",
+  // {
+  // },
+  // function(data, status){
+  //     window.location.href = "index.html";
+  //   //alert("Data: " + data + "\nStatus: " + status);
+  // });
+  // $("#div_create_task").load("model/create_task.php");
 }
 
 function get_proj_members(){
-  $("#slct_proj_members").load("http://localhost/affari/model/get_proj_members.php");
+  $("#slct_proj_members").load("model/get_proj_members.php");
 }
 
 $(function(){
@@ -157,11 +179,11 @@ $(function(){
 });
 
 $(function(){
-  $("#projects").load("http://localhost/affari/model/get_projects.php");
+  $("#projects").load("model/get_projects.php");
 });
 
 $(function(){
-  $("#div_assign_task").load("http://localhost/affari/model/assign_tasks.php");
+  $("#div_assign_task").load("model/get_assigned_tasks.php");
 });
 
 

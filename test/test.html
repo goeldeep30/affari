@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form id="mail_subscribe">
-  <input type="text" name="address" id="email" maxlength="30" size="23">
-  <input type="hidden" name="action" value="subscribe" />
-  <input type="submit" value="" id="submit"name="submit"  >
-</form>
+<html>
+<head>
+  <script type="text/javascript">
+    function getval(){
+      //alert("here");
+      alert("hii"+document.getElementById("opt").value);
+    }
+  </script>
+</head>
+<body>
 
-<p style="display: none;" id="notification">Thank You!</p>
-
-<script>
-$('#mail_subscribe').submit(function() {
-  var post_data = $('#mail_subscribe').serialize();
-  $.post('mlml/process.php', post_data, function(data) {
-    $('#notification').show();
-  });
-});
-
-</script>
-  </body>
+<select id="opt">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
+<input type="button" onclick="getval()">
+</body>
 </html>

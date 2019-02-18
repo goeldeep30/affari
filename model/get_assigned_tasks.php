@@ -2,7 +2,7 @@
   session_start();
   include 'db_conn.php';
   // sql to create user
-  $sql = sprintf("select * FROM tasks WHERE (pid in (select pid from projects where p_owner=%s)) or t_assigned_to=%s;",$_SESSION["user"],$_SESSION["user"]);
+  $sql = sprintf("select * FROM tasks WHERE (pid in (select pid from projects where p_owner=%s)) union(select * FROM tasks WHERE t_assigned_to=%s);",$_SESSION["user"],$_SESSION["user"]);
   if ($result=mysqli_query($conn,$sql)){
     // Fetch one and one
     while ($row=mysqli_fetch_row($result)){
