@@ -27,5 +27,6 @@ create schema affari;
 
   create table project_members(
     pid int not null,
-    p_member bigint not null
+    p_member bigint not null,
+    UNIQUE KEY the_key (pid,p_member)
   );

@@ -85,6 +85,18 @@ function any_curr_user() {
   // $("#div_create_task").load("model/create_task.php");
 }
 
+function assign_task() {
+  // alert("working till here");
+  $.post("model/assign_task.php",
+  {
+    selected_user: ""+document.getElementById("proj_member_id").value
+  },
+  function(data, status){
+    //alert("Data: " + data + "\nStatus: " + status);
+  });
+  // $("#div_create_task").load("model/create_task.php");
+}
+
 function authenticate_user() {
   //alert('working');
   $.post("model/authenticate_user.php",
@@ -142,15 +154,17 @@ function signout_user() {
   // $("#div_create_task").load("model/create_task.php");
 }
 
-function assign_task() {
-  alert('working');
-  // $.post("model/signout_user.php",
-  // {
-  // },
-  // function(data, status){
-  //     window.location.href = "index.html";
-  //   //alert("Data: " + data + "\nStatus: " + status);
-  // });
+function select_task(t_id) {
+  //alert('working');
+  $.post("model/select_task.php",
+  {
+    task_id: t_id
+  },
+  function(data, status){
+    get_proj_members();
+    //alert("Data: " + data + "\nStatus: " + status);
+    //window.location.href = "projdashboard.html";
+  });
   // $("#div_create_task").load("model/create_task.php");
 }
 

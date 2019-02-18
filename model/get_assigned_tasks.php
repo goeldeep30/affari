@@ -15,13 +15,13 @@
       <div class=\"card-body\">
         <h5 class=\"card-title\">%s</h5>
         <p class=\"card-text\"></p>
-        <a onclick=\"get_proj_members()\" href=\"#\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#members_modal\">Assign Task</a>
+        <a onclick=\"select_task(%s)\" href=\"#\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#members_modal\">Assign Task</a>
       </div>
     </div>
     </div>
 
   </div>
-        ",$row[2],$row[3]);
+        ",$row[2],$row[0]);
 
       }
     }
