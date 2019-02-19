@@ -7,10 +7,10 @@
     // Fetch one and one
     while ($row=mysqli_fetch_row($result)){
       printf("
-      <div id=\"todo_card\" class=\"card text-black bg-light mb-3\">
+      <div id=\"todo_card\" class=\"card border-danger text-black bg-light mb-3\">
         <div data-toggle=\"collapse\" data-target=\"#%s\" >
           <div class=\"card-header\">Assigned to:<b>%s</b></div>
-          <div class=\"card-body\">
+          <div class=\"card-body text-danger\">
             <h5 class=\"card-title\">%s</h5>
             <p class=\"card-text\">%s.</p>
           </div>

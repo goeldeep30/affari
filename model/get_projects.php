@@ -7,7 +7,7 @@
     // Fetch one and one
     while ($row=mysqli_fetch_row($result)){
       printf("
-        <div class=\"card col-lg-4 col-md-6\" style=\"width: 18rem;\">
+        <div class=\"card col-lg-4 col-md-6\" >
           <div class=\"card-body\">
           <h5 class='card-title'>%s</h5>
           <p class='card-text'>%s</p>
