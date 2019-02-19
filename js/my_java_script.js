@@ -86,9 +86,33 @@ function any_curr_user() {
   });
   // $("#div_create_task").load("model/create_task.php");
 }
+function if_no_user(){
+  //alert(""+get_curr_user());
+  // if(get_curr_user()!='Nil' && ){
+  //   window.location.href = "my_projects.html";
+  // }
+  $.post("model/get_curr_user.php",
+  {
+  },
+  function(data, status){
+    if(data=='Nil'){
+      window.location.href = "index.html";
+    }
+  });
+}
+
+function if_a_user(){
+  $.post("model/get_curr_user.php",
+  {
+  },
+  function(data, status){
+    if(data!='Nil'){
+      window.location.href = "my_projects.html";
+    }
+  });
+}
 
 function assign_task() {
-  // alert("working till here");
   $.post("model/assign_task.php",
   {
     selected_user: ""+document.getElementById("proj_member_id").value
@@ -96,7 +120,7 @@ function assign_task() {
   function(data, status){
     //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("model/create_task.php");
+
 }
 
 function authenticate_user() {
