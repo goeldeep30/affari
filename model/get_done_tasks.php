@@ -7,7 +7,7 @@
     // Fetch one and one
     while ($row=mysqli_fetch_row($result)){
       printf("
-      <div id=\"done_card\" class=\"card text-black bg-light  mb-3\" style=\"max-width: 18rem;\">
+      <div id=\"done_card\" class=\"card text-black bg-light  mb-3\">
         <div data-toggle=\"collapse\" data-target=\"#%s\" >
         <div class=\"card-header\">Assigned to: <b>%s</b></div>
         <div class=\"card-body\">
@@ -16,10 +16,11 @@
         </div>
       </div>
       <div id=\"%s\" class=\"collapse\" >
+      <button onclick=\"change_task_status(%s,'in_progress')\" type=\"button\" class=\"btn btn-info\">&larr; In Progress</button>
         <button type=\"button\" class=\"btn btn-info\">Details</button>
       </div>
     </div>
-        ",$row[0],$row[5],$row[2],$row[3],$row[0]);
+        ",$row[0],$row[5],$row[2],$row[3],$row[0],$row[0]);
 
       }
     }

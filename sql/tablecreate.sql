@@ -2,6 +2,11 @@ drop schema if exists affari;
 create schema affari;
   use affari;
 
+  delete from users where 1<2;
+  delete from projects where 1<2;
+  delete from tasks where 1<2;
+  delete from project_members where 1<2;
+
   create table users(
     mobile_num bigint primary key,
     f_name varchar(20) not null,

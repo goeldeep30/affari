@@ -70,7 +70,9 @@ function create_task() {
     status: "to do"
   },
   function(data, status){
+    update_dashboard();
     //alert("Data: " + data + "\nStatus: " + status);
+
   });
   // $("#div_create_task").load("model/create_task.php");
 }
@@ -176,13 +178,21 @@ function change_task_status(tid,status) {
     task_status: status
   },
   function(data, status){
-    $("#div_todo").load("model/get_todo_tasks.php");
-    $("#div_in_progress").load("model/get_inprogress_tasks.php");
-    $("#div_done").load("model/get_done_tasks.php");
+    update_dashboard();
     //alert("Data: " + data + "\nStatus: " + status);
     //window.location.href = "projdashboard.html";
   });
   // $("#div_create_task").load("model/create_task.php");
+}
+
+function report_bug(){
+  alert("Please Report all your bugs on: deeptanshu.goel@soprasteria.com, with subject Affari and some screenshots.");
+}
+
+function update_dashboard(){
+  $("#div_todo").load("model/get_todo_tasks.php");
+  $("#div_in_progress").load("model/get_inprogress_tasks.php");
+  $("#div_done").load("model/get_done_tasks.php");
 }
 
 function get_proj_members(){
