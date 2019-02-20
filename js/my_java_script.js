@@ -215,6 +215,14 @@ $(function(){
 });
 
 $(function(){
+  $("#member_list").load("proj_members_list.html");
+});
+
+$(function(){
+  $("#div_proj_members_list").load("model/get_proj_members_list.php");
+});
+
+$(function(){
   $("#div_assign_task").load("model/get_assigned_tasks.php");
 });
 
