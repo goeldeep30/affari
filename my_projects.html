@@ -12,7 +12,12 @@
     <script src="js\jquery.min.js"></script>
     <script src="js\my_java_script.js"></script>
     <script src="js\bootstrap.js"></script>
-    <script type="text/javascript">window.onload = function() {if_no_user();};</script>
+    <script type="text/javascript">
+      window.onload = function() {
+        if_no_user();
+        setInterval(function(){update_my_projects();}, 5000);
+      };
+    </script>
 
     <title></title>
   </head>
@@ -32,4 +37,5 @@
     <div id="new_project"></div>
 
   </body>
+  <div id="div_footer"></div>
 </html>

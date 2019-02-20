@@ -46,3 +46,40 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.fixed-header, .fixed-footer{
+  width: 100%;
+  position: fixed;
+  padding: 10px 0;
+  color: #fff;
+}
+.fixed-header{
+  top: 0;
+}
+.fixed-footer{
+  bottom: 0;
+  background: #333;
+}
+
+
+body{
+  padding-top: 75px;
+  padding-bottom: 60px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.todo_dot{
+	background-color: #ff0000;
+}
+
+.in_progress_dot{
+	background-color: #ffa500;
+}
+.done_dot{
+	background-color: #006400;
+}

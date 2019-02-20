@@ -12,7 +12,7 @@
           <div class=\"card-header\">Assigned to:<b>%s</b></div>
           <div class=\"card-body text-danger\">
             <h5 class=\"card-title\">%s</h5>
-            <p class=\"card-text\">%s.</p>
+            <p class=\"card-text\">%s</p>
           </div>
         </div>
         <div id=\"%s\" class=\"collapse\" >

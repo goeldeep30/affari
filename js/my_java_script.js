@@ -182,6 +182,10 @@ function update_dashboard(){
   $("#div_done").load("model/get_done_tasks.php");
 }
 
+function update_my_projects(){
+  $("#projects").load("model/get_projects.php");
+}
+
 function get_proj_members(){
   $("#slct_proj_members").load("model/get_proj_members.php");
 }
@@ -224,4 +228,8 @@ $(function(){
 
 $(function(){
   $("#div_done").load("model/get_done_tasks.php");
+});
+
+$(function(){
+  $("#div_footer").load("footer.html");
 });
