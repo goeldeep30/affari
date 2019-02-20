@@ -22,13 +22,11 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
-//http://localhost/affari/
 function auto_reload(){
   setInterval(function(){ $("#projects").load("model/get_projects.php"); }, 3000);
 }
 
 function create_user() {
-  //alert("name "+$('#txt_mobile_num').val()+"  pwd:"+$('#txt_pwd').val());
   if($('#txt_pwd').val()==$('#txt_re_pwd').val()){
   $.post("model/create_user.php",
   {
@@ -38,25 +36,20 @@ function create_user() {
     pwd: $('#txt_pwd').val()
   },
   function(data, status){
-    //alert("User creation: " + data);
     window.location.href = "signin.html";
   });
 }else{
   alert("Password do not match: Enter again");
 }
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function create_project() {
-  // $("#div_create_proj").load("model/create_project.php");
-
   $.post("model/create_project.php",
   {
     title: $('#txt_proj_name').val(),
     desc: $('#txt_proj_desc').val()
   },
   function(data, status){
-    //alert("Data: " + data + "\nStatus: " + status);
   });
 
   $("#projects").load("model/get_projects.php");
@@ -71,10 +64,7 @@ function create_task() {
   },
   function(data, status){
     update_dashboard();
-    //alert("Data: " + data + "\nStatus: " + status);
-
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function any_curr_user() {
@@ -82,15 +72,9 @@ function any_curr_user() {
   {
   },
   function(data, status){
-    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 function if_no_user(){
-  //alert(""+get_curr_user());
-  // if(get_curr_user()!='Nil' && ){
-  //   window.location.href = "my_projects.html";
-  // }
   $.post("model/get_curr_user.php",
   {
   },
@@ -118,13 +102,11 @@ function assign_task() {
     selected_user: ""+document.getElementById("proj_member_id").value
   },
   function(data, status){
-    //alert("Data: " + data + "\nStatus: " + status);
   });
 
 }
 
 function authenticate_user() {
-  //alert('working');
   $.post("model/authenticate_user.php",
   {
     uid: $('#txt_uid').val(),
@@ -136,9 +118,7 @@ function authenticate_user() {
     }else{
       alert('invalid credentials');
     }
-    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function select_proj(proj_id) {
@@ -148,50 +128,36 @@ function select_proj(proj_id) {
     project_id: proj_id
   },
   function(data, status){
-
-    //alert("Data: " + data + "\nStatus: " + status);
     window.location.href = "projdashboard.html";
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function add_proj_member() {
-  //alert('working');
   $.post("model/add_project_member.php",
   {
     member_id: $('#txt_new_prj_mbr_m_num').val()
   },
   function(data, status){
-      //window.location.href = "index.html";
-    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function signout_user() {
-  //alert('working');
   $.post("model/signout_user.php",
   {
   },
   function(data, status){
       window.location.href = "index.html";
-    //alert("Data: " + data + "\nStatus: " + status);
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function select_task(t_id) {
-  //alert('working');
   $.post("model/select_task.php",
   {
     task_id: t_id
   },
   function(data, status){
     get_proj_members();
-    //alert("Data: " + data + "\nStatus: " + status);
-    //window.location.href = "projdashboard.html";
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function change_task_status(tid,status) {
@@ -203,10 +169,7 @@ function change_task_status(tid,status) {
   },
   function(data, status){
     update_dashboard();
-    //alert("Data: " + data + "\nStatus: " + status);
-    //window.location.href = "projdashboard.html";
   });
-  // $("#div_create_task").load("model/create_task.php");
 }
 
 function report_bug(){
@@ -262,8 +225,3 @@ $(function(){
 $(function(){
   $("#div_done").load("model/get_done_tasks.php");
 });
-
-// $('#frm_create_project').submit(function() {
-//   var post_data = $('#frm_create_project').serialize();
-//   $.post('model/create_project.php', post_data);
-// });
