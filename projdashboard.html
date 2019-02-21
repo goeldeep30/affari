@@ -35,21 +35,21 @@
       </div>
     </div>
 
-      <div class="row container-fluid">
+      <div class="row container-fluid" style="padding-bottom: 25px;">
 
-        <div id="todo" align="center" class="jumbotron col-sm"  onclick="closeNav()">
-          <h5 >To Do</h5>
-          <div id="div_todo"></div>
+        <div id="todo" align="center" class=" col-sm"  onclick="closeNav()">
+          <button type="button" class="container btn btn-outline-danger btn-lg" data-toggle="collapse" data-target="#div_todo">To Do</button>
+          <div id="div_todo" class="collapse"></div>
         </div>
 
-        <div id="inprogress" align="center" class="jumbotron col-sm" onclick="closeNav()">
-          <h5 >In Progress</h5>
-        <div id="div_in_progress"></div>
+        <div id="inprogress" align="center" class=" col-sm" onclick="closeNav()">
+          <button type="button" class="container btn btn-outline-primary btn-lg" data-toggle="collapse" data-target="#div_in_progress">In Progress</button>
+        <div id="div_in_progress" class="collapse"></div>
 
       </div>
-        <div id="done" align="center" class="jumbotron col-sm"  onclick="closeNav()">
-          <h5>Done</h5>
-        <div id="div_done"></div>
+        <div id="done" align="center" class=" col-sm"  onclick="closeNav()">
+          <button type="button" class=" container btn btn-outline-success btn-lg" data-toggle="collapse" data-target="#div_done">Done</button>
+        <div id="div_done" class="collapse"></div>
       </div>
 
     </div>
