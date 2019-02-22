@@ -37,19 +37,19 @@
 
       <div class="row container-fluid" style="padding-bottom: 25px;">
 
-        <div id="todo" align="center" class=" col-sm"  onclick="closeNav()">
+        <div id="todo" align="center" class=" col-sm"  onclick="closeNav()" >
           <button type="button" class="container btn btn-outline-danger btn-lg" data-toggle="collapse" data-target="#div_todo">To Do</button>
-          <div id="div_todo" class="collapse"></div>
+          <div id="div_todo" class="collapse show"></div>
         </div>
 
         <div id="inprogress" align="center" class=" col-sm" onclick="closeNav()">
           <button type="button" class="container btn btn-outline-primary btn-lg" data-toggle="collapse" data-target="#div_in_progress">In Progress</button>
-        <div id="div_in_progress" class="collapse"></div>
+        <div id="div_in_progress" class="collapse show"></div>
 
       </div>
         <div id="done" align="center" class=" col-sm"  onclick="closeNav()">
           <button type="button" class=" container btn btn-outline-success btn-lg" data-toggle="collapse" data-target="#div_done">Done</button>
-        <div id="div_done" class="collapse"></div>
+        <div id="div_done" class="collapse show"></div>
       </div>
 
     </div>
@@ -59,5 +59,5 @@
     <div id="member_list"></div>
     <div id="div_create_task"></div>
   </body>
-  <div id="div_footer"></div>
+  <!-- <div id="div_footer"></div> -->
 </html>

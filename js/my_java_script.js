@@ -72,6 +72,7 @@ function any_curr_user() {
   {
   },
   function(data, status){
+    return data;
   });
 }
 function if_no_user(){
