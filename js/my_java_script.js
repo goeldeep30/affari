@@ -72,7 +72,7 @@ function any_curr_user() {
   {
   },
   function(data, status){
-    return data;
+    document.getElementById("nav_user_id").innerHTML = data;
   });
 }
 function if_no_user(){
