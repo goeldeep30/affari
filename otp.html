@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Deeptanshu contributors">
+    <meta name="generator" content="Deeptanshu">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/my_css.css">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/handshake.png" />
+
+    <script src="js\jquery.min.js"></script>
+    <script src="js\bootstrap.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+      $.post("model/gen_otp.php",
+    {
+      // new_otp: otp
+    },
+    function(data, status){
+      alert("OTP: "+data);
+    });
+  };
+  function authenticate_otp(otp=document.getElementById('partitioned').value){
+
+    $.post("model/authenticate_otp.php",
+    {
+      new_otp: otp
+    },
+    function(data, status){
+      alert(data);
+    });
+  }
+</script>
+    <title></title>
+  </head>
+  <body>
+    <div class="container jumbotron col-lg-4" align="center">
+
+
+    <div class=""><h5>Enter OTP</h5></div>
+    <div id="divOuter" class="">
+      <div id="divInner"><input id="partitioned" type="text" maxlength="4" /></div>
+    </div>
+     <div class="pt-4"><a href="otp.html" >Resend OTP</a></div>
+     <div class="pt-4"><a href="#" class="btn btn-primary" onclick="authenticate_otp()">Submit OTP</a></div>
+     </div>
+  </body>
+</html>
