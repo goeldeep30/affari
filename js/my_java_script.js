@@ -177,6 +177,32 @@ function report_bug(){
   alert("Please Report all your bugs on: deeptanshu.goel@soprasteria.com, with subject Affari and some screenshots.");
 }
 
+function genOTP() {
+  $.post("model/gen_otp.php",
+{
+   v_mob_num: document.getElementById('txt_mobile_num').value
+},
+function(data, status){
+  alert("OTP: "+data);
+});
+}
+function authenticate_otp(){
+
+return $.post("model/authenticate_otp.php",
+{
+  new_otp: document.getElementById('txt_otp').value,
+  v_mob_num: document.getElementById('txt_mobile_num').value
+},
+function(data, status){
+  alert(data);
+  if(data=='success'){
+    document.getElementById("txt_mobile_num").readOnly = true;
+    return true;
+  }
+  return false;
+});
+}
+
 function update_dashboard(){
   $("#div_todo").load("model/get_todo_tasks.php");
   $("#div_in_progress").load("model/get_inprogress_tasks.php");

@@ -4,6 +4,7 @@
   if($_POST['new_otp']==$_SESSION["new_otp"]){
     print("success");
     unset($_SESSION['new_otp']);
+    $_SESSION['v_mob_num']=$_POST['v_mob_num'];
   }else{
     print("Wrong OTP: Try Again");
   }

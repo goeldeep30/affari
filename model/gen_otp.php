@@ -28,4 +28,7 @@
 $n = 4;
 $_SESSION["new_otp"]=generateNumericOTP($n);
 print_r($_SESSION["new_otp"]);
+print("\n");
+print($_POST['v_mob_num']);
+
  ?>

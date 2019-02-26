@@ -37,7 +37,11 @@
     <span class="input-group-text" id="inputGroup-sizing-default">+91</span>
   </div>
   <input id="txt_mobile_num" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <a href="#" class="btn btn-primary" onclick="genOTP()">Verify</a>
 </div>
+    </div>
+    <div class="form-group">
+      <input id="txt_otp" type="text" class="form-control" placeholder="Enter OTP"  maxlength="4">
     </div>
     <div class="form-group">
       <input id="txt_pwd" type="password" class="form-control" placeholder="Type Password">
@@ -48,7 +52,7 @@
     <div >
       captcha required
     </div>
-    <a href="#" class="btn btn-primary" onclick="create_user()">Signup</a>
+    <a href="#" class="btn btn-primary" onclick="if(authenticate_otp()){create_user()}">Signup</a>
   </div>
   </form>
   <div id="div_footer"></div>

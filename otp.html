@@ -14,23 +14,27 @@
     <script src="js\jquery.min.js"></script>
     <script src="js\bootstrap.js"></script>
     <script type="text/javascript">
-    window.onload = function() {
+    function genOTP() {
       $.post("model/gen_otp.php",
     {
-      // new_otp: otp
+       v_mob_num: document.getElementById('num').value
     },
     function(data, status){
       alert("OTP: "+data);
     });
-  };
+  }
   function authenticate_otp(otp=document.getElementById('partitioned').value){
 
     $.post("model/authenticate_otp.php",
     {
-      new_otp: otp
+      new_otp: otp,
+      v_mob_num: document.getElementById('num').value
     },
     function(data, status){
       alert(data);
+      if(data=='success'){
+        document.getElementById("num").readOnly = true;
+      }
     });
   }
 </script>
@@ -42,9 +46,10 @@
 
     <div class=""><h5>Enter OTP</h5></div>
     <div id="divOuter" class="">
-      <div id="divInner"><input id="partitioned" type="text" maxlength="4" /></div>
+      <div id="divInner"><input id="num" type="text" placeholder="Mobile number" /></div>
+      <div id="divInner"><input id="partitioned" type="text" maxlength="4" placeholder="OTP" /></div>
     </div>
-     <div class="pt-4"><a href="otp.html" >Resend OTP</a></div>
+     <div class="pt-4"><a href="#" onclick="genOTP()">Resend OTP</a></div>
      <div class="pt-4"><a href="#" class="btn btn-primary" onclick="authenticate_otp()">Submit OTP</a></div>
      </div>
   </body>
