@@ -187,20 +187,26 @@ function(data, status){
 });
 }
 function authenticate_otp(){
-
-return $.post("model/authenticate_otp.php",
-{
-  new_otp: document.getElementById('txt_otp').value,
-  v_mob_num: document.getElementById('txt_mobile_num').value
-},
-function(data, status){
-  alert(data);
-  if(data=='success'){
-    document.getElementById("txt_mobile_num").readOnly = true;
-    return true;
+  var x=false;
+   $.ajax({
+    type: 'POST',
+    async:false,
+    url: "model/authenticate_otp.php",
+    data: {
+      new_otp: document.getElementById('txt_otp').value,
+      v_mob_num: document.getElementById('txt_mobile_num').value
+    },
+    success: function(data){
+      if(data=='success'){
+      document.getElementById("txt_mobile_num").readOnly = true;
+      x= true;
+    }else{
+      x= false;
+    }
   }
-  return false;
-});
+
+  });
+return x;
 }
 
 function update_dashboard(){
